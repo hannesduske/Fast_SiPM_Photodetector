@@ -1,0 +1,5 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "CustomParts") (type "KiCad") (uri "${KIPRJMOD}/CustomParts.pretty") (options "") (descr ""))
+	(lib (name "KiCad") (type "KiCad") (uri "/home/hannes/Downloads/LIB_1778764/1778764/KiCad") (options "") (descr ""))
+)

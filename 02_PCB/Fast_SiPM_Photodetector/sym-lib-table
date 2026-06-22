@@ -1,0 +1,6 @@
+(sym_lib_table
+	(version 7)
+	(lib (name "MICROFC-30035-SMT-TR1") (type "KiCad") (uri "/home/hannes/Downloads/LIB_MICROFC-30035-SMT-TR1/MICROFC-30035-SMT-TR1/KiCad/MICROFC-30035-SMT-TR1.kicad_sym") (options "") (descr ""))
+	(lib (name "LMR51606XDBVR") (type "KiCad") (uri "/home/hannes/Downloads/LIB_LMR51606XDBVR/LMR51606XDBVR/KiCad/LMR51606XDBVR.kicad_sym") (options "") (descr ""))
+	(lib (name "GRF4142") (type "KiCad") (uri "/home/hannes/Downloads/LIB_GRF4142/GRF4142/KiCad/GRF4142.kicad_sym") (options "") (descr ""))
+)

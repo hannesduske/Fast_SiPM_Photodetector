@@ -1,0 +1,208 @@
+(footprint "PTSM 0,5 3-HH-2,5 SMD R32"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "1778777")
+	(tags "Connector")
+	(property "Reference" "J**"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(uuid "04ecb298-30d1-42f9-91e8-d8100b66081d")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(property "Value" "PTSM 0,5 3-HH-2,5 SMD R32"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "6a2f7420-a1a2-4c4c-881d-54ade843b8f8")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "ec324357-636f-4a97-8d74-42550f83e270")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "f5ace0a6-a198-43ac-abba-9138dc9078f2")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr through_hole exclude_from_pos_files)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start 5.65 8.25)
+		(end -5.65 8.25)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "0bae0e90-9c10-448f-84ac-5678b02c4781")
+	)
+	(fp_circle
+		(center -6.35 0)
+		(end -6.4 0)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "e68c67ea-0349-429b-a52c-9566141ad123")
+	)
+	(fp_line
+		(start -8 -2.4)
+		(end 8 -2.4)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "77a23b7c-6168-427b-88ad-5a891ffd5c4c")
+	)
+	(fp_line
+		(start -8 9.25)
+		(end -8 -2.4)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "7a706ff8-2606-42cd-87f1-964a83e226a6")
+	)
+	(fp_line
+		(start -5.65 0.75)
+		(end 5.65 0.75)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "91a0cd6e-066c-4829-8d9e-c36a3e477197")
+	)
+	(fp_line
+		(start -5.65 8.25)
+		(end -5.65 0.75)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "181db8e4-7f75-4cb8-b7b2-cf9fb5911a2a")
+	)
+	(fp_line
+		(start 5.65 0.75)
+		(end 5.65 8.25)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "47b44c16-2245-4d83-b9b5-a35423d144fe")
+	)
+	(fp_line
+		(start 5.65 8.25)
+		(end -5.65 8.25)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "74c49266-fc22-4e0a-a80b-969107fc41c1")
+	)
+	(fp_line
+		(start 8 -2.4)
+		(end 8 9.25)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "7fdce000-808e-49a8-ac80-bcfbcff6ad10")
+	)
+	(fp_line
+		(start 8 9.25)
+		(end -8 9.25)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "5e4a12a9-c6e1-4104-b75e-7c31f5b114e9")
+	)
+	(pad "1" smd rect
+		(at -2.5 0)
+		(size 1.2 3.2)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(thermal_bridge_angle 45)
+		(uuid "08b6bf68-eb4d-4001-8cb1-afe8cfc4b3e1")
+	)
+	(pad "2" smd rect
+		(at 0 0)
+		(size 1.2 3.2)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(thermal_bridge_angle 45)
+		(uuid "6a17bd36-cb20-445a-96d4-50a7442fa1f9")
+	)
+	(pad "3" smd rect
+		(at 2.5 0)
+		(size 1.2 3.2)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(thermal_bridge_angle 45)
+		(uuid "b1159efd-701a-45db-a395-1f41b4f87036")
+	)
+	(pad "4" smd rect
+		(at -6.1 4.2)
+		(size 2.2 5.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(thermal_bridge_angle 45)
+		(uuid "61839695-bfb3-4cfe-a5ee-6ff3ef54a363")
+	)
+	(pad "5" smd rect
+		(at 6.1 4.2)
+		(size 2.2 5.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(thermal_bridge_angle 45)
+		(uuid "8c9b12e4-c315-4451-b21c-80e13d1b9b4c")
+	)
+	(pad "6" thru_hole circle
+		(at -3.6 5.35 90)
+		(size 1.1 1.1)
+		(drill 1.1)
+		(layers "*.Cu" "*.Mask" "F.SilkS")
+		(remove_unused_layers no)
+		(uuid "c6118e5b-8d10-48ac-aa40-d22de110cb2d")
+	)
+	(pad "7" thru_hole circle
+		(at 3.6 5.35 90)
+		(size 1.1 1.1)
+		(drill 1.1)
+		(layers "*.Cu" "*.Mask" "F.SilkS")
+		(remove_unused_layers no)
+		(uuid "d1353d23-5f54-41e6-9bd2-d0b2f47f3fca")
+	)
+	(embedded_fonts no)
+)
