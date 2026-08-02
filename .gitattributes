@@ -1,0 +1,10 @@
+*.asc linguist-language=Text -linguist-detectable
+
+*.kicad_pcb linguist-language=KiCad-Layout linguist-detectable
+*.kicad_sch linguist-language=KiCad-Schematic linguist-detectable
+*.kicad_sym linguist-language=KiCad-Schematic linguist-detectable
+*.kicad_mod linguist-language=KiCad-Layout linguist-detectable
+*.kicad_wks linguist-language=KiCad-Layout linguist-detectable
+
+#*.kicad_pro linguist-language=JSON linguist-detectable
+#*.kicad_prl linguist-language=JSON linguist-detectable
