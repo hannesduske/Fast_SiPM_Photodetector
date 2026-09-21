@@ -52,7 +52,7 @@
         "zones": {
           "border_display_style": 2,
           "border_hatch_pitch": 0.5,
-          "corner_radius": 0.2,
+          "corner_radius": 1.0,
           "corner_smoothing": 2,
           "fill_mode": 0,
           "hatch_gap": 1.5,
@@ -553,7 +553,7 @@
       "plot": "",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "SinglePhotonDetector.step",
       "svg": "",
       "vrml": ""
     },
@@ -685,7 +685,7 @@
         "uuid": "74b1e2e4-bcd1-4fcc-9b31-cf62bc4f9919"
       }
     ],
-    "used_designators": "L2-3,#PWR7-19,RV1,FB2,R2,R10-19,IC2-6,U1-2,Q2-3,D2,C7-26",
+    "used_designators": "H1-4,J1-5,SW1,C1-29,IC1-6,Q1-5,D1-2,U1-4,F1,R1-19,#PWR1-33,RV1,FB1-3,L1-4",
     "variants": []
   },
   "sheets": [

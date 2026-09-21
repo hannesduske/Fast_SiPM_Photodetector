@@ -1322,6 +1322,18 @@
 		)
 		(uuid "9e0d0eb4-5213-4eb8-ac3e-0ed95c8bf5aa")
 	)
+	(text "HV Power Supply"
+		(exclude_from_sim no)
+		(at 152.4 35.814 0)
+		(effects
+			(font
+				(size 3.81 3.81)
+				(thickness 0.508)
+				(bold yes)
+			)
+		)
+		(uuid "b4de89ae-c3a9-4821-8e19-19a7e0e72958")
+	)
 	(text "Feedback Network"
 		(exclude_from_sim no)
 		(at 270.002 47.752 0)
@@ -1353,13 +1365,7 @@
 		(uuid "390a3fb0-bfc4-42a2-8131-f96eb76095c2")
 	)
 	(junction
-		(at 53.34 101.6)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "6fad1fb7-a707-4c78-9e9f-dbf81148919e")
-	)
-	(junction
-		(at 53.34 86.36)
+		(at 54.61 86.36)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "78582df4-c8e6-44fd-b1f2-78a2f612accb")
@@ -1456,7 +1462,7 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 101.6) (xy 73.66 101.6)
+			(xy 54.61 101.6) (xy 73.66 101.6)
 		)
 		(stroke
 			(width 0)
@@ -1506,7 +1512,7 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 86.36) (xy 60.96 86.36)
+			(xy 54.61 86.36) (xy 60.96 86.36)
 		)
 		(stroke
 			(width 0)
@@ -1626,7 +1632,7 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 97.79) (xy 53.34 101.6)
+			(xy 54.61 97.79) (xy 54.61 101.6)
 		)
 		(stroke
 			(width 0)
@@ -1726,7 +1732,7 @@
 	)
 	(wire
 		(pts
-			(xy 48.26 86.36) (xy 53.34 86.36)
+			(xy 49.53 86.36) (xy 54.61 86.36)
 		)
 		(stroke
 			(width 0)
@@ -1816,7 +1822,7 @@
 	)
 	(wire
 		(pts
-			(xy 266.7 132.08) (xy 271.78 132.08)
+			(xy 266.7 132.08) (xy 275.59 132.08)
 		)
 		(stroke
 			(width 0)
@@ -2006,17 +2012,7 @@
 	)
 	(wire
 		(pts
-			(xy 48.26 101.6) (xy 53.34 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f07fc8b4-25d4-4eed-96b4-052e4907f80d")
-	)
-	(wire
-		(pts
-			(xy 53.34 86.36) (xy 53.34 90.17)
+			(xy 54.61 86.36) (xy 54.61 90.17)
 		)
 		(stroke
 			(width 0)
@@ -2104,7 +2100,7 @@
 		)
 		(uuid "0e61c06f-5943-4477-9450-a6b9a1a196c3")
 	)
-	(label "EN"
+	(label "HV_EN"
 		(at 120.65 97.79 0)
 		(effects
 			(font
@@ -2115,8 +2111,8 @@
 		)
 		(uuid "71d4aaed-8722-4da6-af0a-ebc3da4200c5")
 	)
-	(label "EN"
-		(at 271.78 132.08 180)
+	(label "HV_EN"
+		(at 275.59 132.08 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2126,7 +2122,7 @@
 		)
 		(uuid "75d9aeeb-19b1-47ed-b839-3ea101ff105a")
 	)
-	(label "FBX"
+	(label "HV_FB"
 		(at 120.65 113.03 0)
 		(effects
 			(font
@@ -2136,30 +2132,19 @@
 		)
 		(uuid "7c906543-c093-4e38-9e74-9de70975434e")
 	)
-	(label "FBX"
-		(at 274.32 72.39 0)
+	(label "HV_FB"
+		(at 274.32 72.39 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "c16abf3e-a653-4966-8c42-96104f362c2a")
 	)
-	(hierarchical_label "GND"
-		(shape input)
-		(at 48.26 101.6 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "262d66b3-3d63-40a3-a03d-ce5b520ca534")
-	)
 	(hierarchical_label "VIN"
 		(shape input)
-		(at 48.26 86.36 180)
+		(at 49.53 86.36 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2444,7 +2429,7 @@
 				)
 			)
 		)
-		(property "Value" "SMD115PBQ-TP"
+		(property "Value" "RB021VAM90TR"
 			(at 197.104 83.058 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3217,7 +3202,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 53.34 93.98 180)
+		(at 54.61 93.98 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3227,7 +3212,7 @@
 		(dnp no)
 		(uuid "87e2126f-5453-4e64-a34b-4bf64b3aa58b")
 		(property "Reference" "C1"
-			(at 56.642 92.71 0)
+			(at 57.912 92.71 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3238,7 +3223,7 @@
 			)
 		)
 		(property "Value" "10u;50V"
-			(at 56.642 95.25 0)
+			(at 57.912 95.25 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3249,7 +3234,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
-			(at 52.3748 90.17 0)
+			(at 53.6448 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3260,7 +3245,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 53.34 93.98 0)
+			(at 54.61 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3271,7 +3256,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 53.34 93.98 0)
+			(at 54.61 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

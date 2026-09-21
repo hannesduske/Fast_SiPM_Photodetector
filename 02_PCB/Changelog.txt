@@ -1,0 +1,13 @@
+Changelog
+- V0.1
+  - Initial prototype
+-V0.2
+  - Add an input filter stage to the low voltage regulator
+  - Increase the 6V rail to 6.6V for better performance of the amplifier
+  - Specify the exact part number of the LMR516xx for the fixed PMW (FPWM) version 
+  - Specify the exact part number of the TLV70033xxxx LDO for the SOT-23-5 package
+  - Fix the the bias tee resistor value and use a larger 0805 resistor
+  - Replace the ferrite bead of the amplifier bias tee with two dedicated RF inductors
+  - Use specialized RF DC blocking capacitors for the amplifier and increase their capacitance
+  - Make footprint of the 74404052470 inductor smaller
+  

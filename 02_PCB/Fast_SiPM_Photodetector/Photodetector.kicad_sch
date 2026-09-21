@@ -1424,7 +1424,7 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "V_BIAS adjustable between\n28.8 V ... 29.1 V with the\nselected resistor values"
+	(text "V_BIAS adjustable between\n23.8 V ... 29.1 V with the\nselected resistor values"
 		(exclude_from_sim no)
 		(at 38.354 175.768 0)
 		(effects
@@ -1433,6 +1433,18 @@
 			)
 		)
 		(uuid "5d9e95ab-2a74-4ac2-a42a-f21bf68657a7")
+	)
+	(text "Photodetector"
+		(exclude_from_sim no)
+		(at 147.574 36.068 0)
+		(effects
+			(font
+				(size 3.81 3.81)
+				(thickness 0.508)
+				(bold yes)
+			)
+		)
+		(uuid "846e01c6-27c0-464b-bf51-7cc6053dff10")
 	)
 	(junction
 		(at 127 134.62)
@@ -2300,17 +2312,6 @@
 		)
 		(uuid "6c4270b6-81e8-449e-9cea-46a849f3b092")
 	)
-	(hierarchical_label "GND"
-		(shape input)
-		(at 81.28 87.63 270)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "95a6e9f8-182d-49f3-9939-70eb1c2aa818")
-	)
 	(hierarchical_label "BIAS_ADJ"
 		(shape input)
 		(at 193.04 85.09 180)
@@ -2587,7 +2588,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10n; 100V"
+		(property "Value" "10n;100V"
 			(at 111.76 135.8899 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2719,6 +2720,84 @@
 			(project "Fast_SiPM_Photodetector"
 				(path "/74b1e2e4-bcd1-4fcc-9b31-cf62bc4f9919/4b98d106-56f1-476c-9227-b8a48a6c8e2a"
 					(reference "#PWR013")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 81.28 87.63 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4bdd58d3-c539-4931-8d51-b3bf3ad4ee2c")
+		(property "Reference" "#PWR029"
+			(at 81.28 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 81.28 92.71 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 81.28 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 81.28 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 81.28 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b5c41b87-a74e-4082-9eaf-c903f0df5be0")
+		)
+		(instances
+			(project "SinglePhotonDetector"
+				(path "/74b1e2e4-bcd1-4fcc-9b31-cf62bc4f9919/4b98d106-56f1-476c-9227-b8a48a6c8e2a"
+					(reference "#PWR029")
 					(unit 1)
 				)
 			)
@@ -3230,7 +3309,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "3314J-1-103"
+		(property "Value" "3314J-1-102"
 			(at 196.85 88.9001 0)
 			(show_name no)
 			(do_not_autoplace no)
