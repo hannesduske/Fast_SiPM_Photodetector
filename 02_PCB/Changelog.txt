@@ -10,4 +10,5 @@ Changelog
   - Replace the ferrite bead of the amplifier bias tee with two dedicated RF inductors
   - Use specialized RF DC blocking capacitors for the amplifier and increase their capacitance
   - Make footprint of the 74404052470 inductor smaller
+  - Place amplifier supply filter outside of shielding can
   

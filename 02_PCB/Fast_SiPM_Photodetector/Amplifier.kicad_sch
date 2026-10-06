@@ -8,6 +8,234 @@
 		(title "Fast SiPM Photodetector")
 	)
 	(lib_symbols
+		(symbol "CustomParts:S0941-46R"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "MP"
+				(at 16.51 7.62 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Value" "S0941-46R"
+				(at 16.51 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Footprint" "CustomParts:S094146R"
+				(at 16.51 -94.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Datasheet" "https://content.harwin.com/m/8abb3b5184c36379/original/DRG-02146-Technical-Drawing-Datasheet-S0941-46R-pdf.pdf"
+				(at 16.51 -194.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Description" "Shielding: Micro SMT Shield Clip for 0.135-0.16mm thick Cans (T+R)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Height" "1"
+				(at 16.51 -394.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Mouser Part Number" "855-S0941-46R"
+				(at 16.51 -494.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Harwin/S0941-46R?qs=je9i9FKnZoyArcEueT2VDw%3D%3D"
+				(at 16.51 -594.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Manufacturer_Name" "Harwin"
+				(at 16.51 -694.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Manufacturer_Part_Number" "S0941-46R"
+				(at 16.51 -794.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(symbol "S0941-46R_1_1"
+				(rectangle
+					(start 5.08 2.54)
+					(end 15.24 -12.7)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at 0 0 0)
+					(length 5.08)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 0)
+					(length 5.08)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -5.08 0)
+					(length 5.08)
+					(name "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -7.62 0)
+					(length 5.08)
+					(name "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -10.16 0)
+					(length 5.08)
+					(name "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:C"
 			(pin_numbers
 				(hide yes)
@@ -979,6 +1207,18 @@
 		)
 		(uuid "3b211c5f-55af-42c3-a4e5-1189239422a3")
 	)
+	(text "Shielding Can Clips"
+		(exclude_from_sim no)
+		(at 51.816 153.924 0)
+		(effects
+			(font
+				(size 1.778 1.778)
+				(thickness 0.3556)
+				(bold yes)
+			)
+		)
+		(uuid "502eb4a0-2f1a-41da-8358-edf9409a01df")
+	)
 	(text "For better performance\nuse a Thin Film Resistor"
 		(exclude_from_sim no)
 		(at 215.138 71.374 0)
@@ -1012,10 +1252,64 @@
 		(uuid "d2185d91-61d0-442a-9803-62fee03d3793")
 	)
 	(junction
+		(at 120.65 173.99)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "198be3ac-0a65-470d-8b94-778f62e0c370")
+	)
+	(junction
 		(at 165.1 63.5)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "1d4dc6d9-7388-4d3a-99e0-dc500d638290")
+	)
+	(junction
+		(at 142.24 166.37)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1ebd39df-1a21-4ae4-af3c-c5f712dfa7aa")
+	)
+	(junction
+		(at 97.79 172.72)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "34fdbb90-8da7-40bf-bf8f-090d2a88b8c5")
+	)
+	(junction
+		(at 120.65 166.37)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3b4697c0-e6cb-4239-b5c2-499356e53e6d")
+	)
+	(junction
+		(at 33.02 172.72)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4108639c-46f2-4e05-9bdd-bd1efc722b0a")
+	)
+	(junction
+		(at 54.61 167.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "49289677-df8d-4bd0-a61b-e5749d55450a")
+	)
+	(junction
+		(at 142.24 173.99)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4a4e0cb5-0077-4b91-baad-cf06e02ce38d")
+	)
+	(junction
+		(at 54.61 175.26)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4c661d0a-1115-4535-9ce4-118dbd69bf04")
+	)
+	(junction
+		(at 142.24 168.91)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "65f0c353-60c1-4d9d-a5a4-b912daa707e0")
 	)
 	(junction
 		(at 139.7 63.5)
@@ -1024,10 +1318,64 @@
 		(uuid "7762f795-892c-4013-a658-3e75249e72e2")
 	)
 	(junction
+		(at 33.02 167.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "85ab2f81-a25d-4665-8f7a-aa011c5f5d15")
+	)
+	(junction
+		(at 76.2 167.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8e67b6a5-b07e-40f3-8dd2-b6ccb0df8243")
+	)
+	(junction
 		(at 88.9 63.5)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "945cb90d-30e8-47de-80bb-197db5f58285")
+	)
+	(junction
+		(at 97.79 167.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "970f364b-bec4-41ff-8181-ae443c5ed3b3")
+	)
+	(junction
+		(at 76.2 175.26)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9721f667-933a-46fc-bb8b-ab3a9f855638")
+	)
+	(junction
+		(at 76.2 172.72)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9cbdef6e-2f1d-41e9-9569-4546c5d76462")
+	)
+	(junction
+		(at 97.79 170.18)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a73ade6e-a28d-4b30-b20c-00b32e2199a2")
+	)
+	(junction
+		(at 54.61 170.18)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a7f3e9e1-bf49-44bc-b920-bd2062ce8a1a")
+	)
+	(junction
+		(at 54.61 172.72)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b2c7da6f-b341-4933-8435-1016f3db6209")
+	)
+	(junction
+		(at 142.24 171.45)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b626b1de-1071-41cf-b2f4-11da78353a7d")
 	)
 	(junction
 		(at 190.5 114.3)
@@ -1036,10 +1384,56 @@
 		(uuid "bf8d8c1f-64a3-4c1e-afe1-666809131d3d")
 	)
 	(junction
+		(at 120.65 168.91)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c02f28e5-770f-4978-ba0f-eaeb5bcb22b4")
+	)
+	(junction
+		(at 76.2 170.18)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c87b0874-0411-49d1-b09d-0c67b7dec5a0")
+	)
+	(junction
 		(at 102.87 76.2)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ca594516-b12b-4ae3-b912-e0ba4650ccc7")
+	)
+	(junction
+		(at 33.02 175.26)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e383d38a-2dcb-400f-a669-196198225ed4")
+	)
+	(junction
+		(at 97.79 175.26)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e3bc6916-ea78-46cf-b074-f818cf01ed9a")
+	)
+	(junction
+		(at 120.65 171.45)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "eaaac4a3-9568-47a9-be94-c3e00c105da8")
+	)
+	(junction
+		(at 33.02 170.18)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fa57d840-0b16-4534-862a-0e97945e9eee")
+	)
+	(wire
+		(pts
+			(xy 97.79 165.1) (xy 97.79 167.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "00337ae3-0834-4992-9720-652eaad6aedd")
 	)
 	(wire
 		(pts
@@ -1063,6 +1457,16 @@
 	)
 	(wire
 		(pts
+			(xy 76.2 172.72) (xy 76.2 175.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "081ce0fc-0f39-4f73-9373-4bf85909f9c0")
+	)
+	(wire
+		(pts
 			(xy 175.26 114.3) (xy 190.5 114.3)
 		)
 		(stroke
@@ -1083,6 +1487,26 @@
 	)
 	(wire
 		(pts
+			(xy 142.24 171.45) (xy 142.24 173.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "10d853e8-3e7f-4fab-88f3-32b46df7164a")
+	)
+	(wire
+		(pts
+			(xy 54.61 172.72) (xy 54.61 175.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "14dd4160-14cd-4888-aff1-d8f419ad12e6")
+	)
+	(wire
+		(pts
 			(xy 102.87 76.2) (xy 102.87 82.55)
 		)
 		(stroke
@@ -1090,6 +1514,66 @@
 			(type default)
 		)
 		(uuid "15d42edc-1dbc-4456-8e8a-81993a7c2643")
+	)
+	(wire
+		(pts
+			(xy 142.24 166.37) (xy 142.24 168.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "16128e9a-1ee9-4616-a43a-d48f0bee1c80")
+	)
+	(wire
+		(pts
+			(xy 120.65 163.83) (xy 120.65 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "18c8d160-ae6b-453b-8800-63b3a3223f9b")
+	)
+	(wire
+		(pts
+			(xy 76.2 175.26) (xy 76.2 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1dd81b57-39e1-4719-ab4a-8ade02768bd6")
+	)
+	(wire
+		(pts
+			(xy 120.65 173.99) (xy 120.65 176.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1ddba63c-7b64-48ab-a73e-64248453dd68")
+	)
+	(wire
+		(pts
+			(xy 142.24 173.99) (xy 142.24 176.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "215d51c7-9cb1-4b32-ba7b-f0cd5b16faa5")
+	)
+	(wire
+		(pts
+			(xy 97.79 167.64) (xy 97.79 170.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "22416713-147b-493a-9d8d-0e778e56f09c")
 	)
 	(wire
 		(pts
@@ -1110,6 +1594,16 @@
 			(type default)
 		)
 		(uuid "26c0d11c-d3d5-4cc5-8072-9965e4f445db")
+	)
+	(wire
+		(pts
+			(xy 120.65 168.91) (xy 120.65 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2b59d14b-0120-4214-8ba7-1773d33b017d")
 	)
 	(wire
 		(pts
@@ -1163,6 +1657,26 @@
 	)
 	(wire
 		(pts
+			(xy 54.61 175.26) (xy 54.61 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4868b95d-8cad-41a6-9051-a1ceaf1ea1f5")
+	)
+	(wire
+		(pts
+			(xy 97.79 172.72) (xy 97.79 175.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4d341aa2-bbbc-49e1-b3af-0498724c0f6b")
+	)
+	(wire
+		(pts
 			(xy 165.1 63.5) (xy 165.1 67.31)
 		)
 		(stroke
@@ -1170,6 +1684,26 @@
 			(type default)
 		)
 		(uuid "4fa7869a-a3a2-4b01-bd74-2ee4d85b32e0")
+	)
+	(wire
+		(pts
+			(xy 97.79 170.18) (xy 97.79 172.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5640f8ee-7ea5-476e-b4e3-0bcc4966e24a")
+	)
+	(wire
+		(pts
+			(xy 33.02 170.18) (xy 33.02 172.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5b97be2f-e407-44a2-b096-f6e2d29691c7")
 	)
 	(wire
 		(pts
@@ -1183,6 +1717,26 @@
 	)
 	(wire
 		(pts
+			(xy 76.2 170.18) (xy 76.2 172.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "62dbc600-bb6e-4649-ab6b-0e63c3318402")
+	)
+	(wire
+		(pts
+			(xy 142.24 168.91) (xy 142.24 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6d131a63-d4e3-4bee-9231-a2cb70e5e07d")
+	)
+	(wire
+		(pts
 			(xy 102.87 71.12) (xy 102.87 76.2)
 		)
 		(stroke
@@ -1190,6 +1744,56 @@
 			(type default)
 		)
 		(uuid "6d8e68b1-5f5b-455d-a960-33c8fe380857")
+	)
+	(wire
+		(pts
+			(xy 76.2 165.1) (xy 76.2 167.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7daa007d-6009-4ff9-a2d2-946f36e6e9ad")
+	)
+	(wire
+		(pts
+			(xy 33.02 172.72) (xy 33.02 175.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "894c492f-ba45-42d6-9082-44f706138242")
+	)
+	(wire
+		(pts
+			(xy 54.61 170.18) (xy 54.61 172.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8b35210d-0579-4e7b-af53-b589c1d1e024")
+	)
+	(wire
+		(pts
+			(xy 76.2 167.64) (xy 76.2 170.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "912d175c-f6c3-47bc-a26f-bf0de0da1d68")
+	)
+	(wire
+		(pts
+			(xy 33.02 175.26) (xy 33.02 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9927012a-0348-44e4-aaaf-e33a32933267")
 	)
 	(wire
 		(pts
@@ -1223,6 +1827,16 @@
 	)
 	(wire
 		(pts
+			(xy 33.02 165.1) (xy 33.02 167.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b7474118-4194-4121-9855-76a0f71f4d4b")
+	)
+	(wire
+		(pts
 			(xy 107.95 63.5) (xy 190.5 63.5)
 		)
 		(stroke
@@ -1230,6 +1844,16 @@
 			(type default)
 		)
 		(uuid "ba6d066a-ae93-48dd-8621-cb8ab6e9791e")
+	)
+	(wire
+		(pts
+			(xy 54.61 167.64) (xy 54.61 170.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ba6e083d-b263-408e-92ee-33b54c01ce13")
 	)
 	(wire
 		(pts
@@ -1243,6 +1867,36 @@
 	)
 	(wire
 		(pts
+			(xy 54.61 165.1) (xy 54.61 167.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d610efe6-77f7-48ae-badb-5c5ec5fe6832")
+	)
+	(wire
+		(pts
+			(xy 97.79 175.26) (xy 97.79 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dc2ede80-a61d-4861-a374-0e0aeba016ac")
+	)
+	(wire
+		(pts
+			(xy 120.65 166.37) (xy 120.65 168.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e1f9da59-f503-4799-8dac-99651571fd8b")
+	)
+	(wire
+		(pts
 			(xy 190.5 87.63) (xy 190.5 93.98)
 		)
 		(stroke
@@ -1253,6 +1907,26 @@
 	)
 	(wire
 		(pts
+			(xy 142.24 163.83) (xy 142.24 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e449341a-faf9-48c0-9b21-fa52d60256c7")
+	)
+	(wire
+		(pts
+			(xy 120.65 171.45) (xy 120.65 173.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ec2d3a8c-bcf4-433c-87bd-f8d0058b4c75")
+	)
+	(wire
+		(pts
 			(xy 165.1 74.93) (xy 165.1 78.74)
 		)
 		(stroke
@@ -1260,6 +1934,16 @@
 			(type default)
 		)
 		(uuid "fad122f2-dd08-406e-8f3a-4a03b7f134e5")
+	)
+	(wire
+		(pts
+			(xy 33.02 167.64) (xy 33.02 170.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fda4229e-d00b-438e-9fbb-bd575078fdab")
 	)
 	(hierarchical_label "SIG_IN"
 		(shape input)
@@ -1369,6 +2053,84 @@
 			(project "Fast_SiPM_Photodetector"
 				(path "/74b1e2e4-bcd1-4fcc-9b31-cf62bc4f9919/3148affa-2a75-4639-9287-5822e10921d4"
 					(reference "R16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 33.02 177.8 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "100fd87e-2d8b-43f0-95e6-f38b4c197559")
+		(property "Reference" "#PWR034"
+			(at 33.02 184.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 33.02 182.88 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 33.02 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 33.02 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 33.02 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "50f449c0-6d19-4f9a-8e21-4dfb48707067")
+		)
+		(instances
+			(project "SinglePhotonDetector"
+				(path "/74b1e2e4-bcd1-4fcc-9b31-cf62bc4f9919/3148affa-2a75-4639-9287-5822e10921d4"
+					(reference "#PWR034")
 					(unit 1)
 				)
 			)
@@ -1860,6 +2622,84 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 76.2 177.8 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4b72dc9f-6176-444b-8f40-8c3e8487e61d")
+		(property "Reference" "#PWR036"
+			(at 76.2 184.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 76.2 182.88 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 76.2 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 76.2 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 76.2 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "58d991c4-7415-4f9d-937c-c6fb82f619e6")
+		)
+		(instances
+			(project "SinglePhotonDetector"
+				(path "/74b1e2e4-bcd1-4fcc-9b31-cf62bc4f9919/3148affa-2a75-4639-9287-5822e10921d4"
+					(reference "#PWR036")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 165.1 78.74 0)
 		(unit 1)
 		(body_style 1)
@@ -2019,6 +2859,158 @@
 		)
 	)
 	(symbol
+		(lib_id "CustomParts:S0941-46R")
+		(at 142.24 163.83 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "65e8ebd9-70de-4f3b-94e0-409007f8f287")
+		(property "Reference" "MP6"
+			(at 147.32 157.48 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "S0941-46R"
+			(at 147.32 160.02 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "CustomParts:S094146R"
+			(at 158.75 258.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Datasheet" "https://content.harwin.com/m/8abb3b5184c36379/original/DRG-02146-Technical-Drawing-Datasheet-S0941-46R-pdf.pdf"
+			(at 158.75 358.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Description" "Shielding: Micro SMT Shield Clip for 0.135-0.16mm thick Cans (T+R)"
+			(at 142.24 163.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Height" "1"
+			(at 158.75 558.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" "855-S0941-46R"
+			(at 158.75 658.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Harwin/S0941-46R?qs=je9i9FKnZoyArcEueT2VDw%3D%3D"
+			(at 158.75 758.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "Harwin"
+			(at 158.75 858.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "S0941-46R"
+			(at 158.75 958.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "1"
+			(uuid "f4e07934-7776-44d9-92ca-02ba30ff4da3")
+		)
+		(pin "2"
+			(uuid "d60a2940-6d74-4e65-b75a-aa6cba45a03c")
+		)
+		(pin "5"
+			(uuid "75973183-3e3d-4ed2-bec6-59082613c1f3")
+		)
+		(pin "4"
+			(uuid "938abea1-9cba-4b2e-b71e-864ae025488e")
+		)
+		(pin "3"
+			(uuid "a049fbb4-64e7-41af-9a61-edd3c62edf04")
+		)
+		(instances
+			(project "SinglePhotonDetector"
+				(path "/74b1e2e4-bcd1-4fcc-9b31-cf62bc4f9919/3148affa-2a75-4639-9287-5822e10921d4"
+					(reference "MP6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 165.1 125.73 0)
 		(unit 1)
@@ -2091,6 +3083,236 @@
 			(project "Fast_SiPM_Photodetector"
 				(path "/74b1e2e4-bcd1-4fcc-9b31-cf62bc4f9919/3148affa-2a75-4639-9287-5822e10921d4"
 					(reference "#PWR030")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "CustomParts:S0941-46R")
+		(at 76.2 165.1 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "761b2fbc-0921-4f51-95dd-f8fe9bc9146c")
+		(property "Reference" "MP3"
+			(at 81.28 158.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "S0941-46R"
+			(at 81.28 161.29 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "CustomParts:S094146R"
+			(at 92.71 260.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Datasheet" "https://content.harwin.com/m/8abb3b5184c36379/original/DRG-02146-Technical-Drawing-Datasheet-S0941-46R-pdf.pdf"
+			(at 92.71 360.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Description" "Shielding: Micro SMT Shield Clip for 0.135-0.16mm thick Cans (T+R)"
+			(at 76.2 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Height" "1"
+			(at 92.71 560.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" "855-S0941-46R"
+			(at 92.71 660.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Harwin/S0941-46R?qs=je9i9FKnZoyArcEueT2VDw%3D%3D"
+			(at 92.71 760.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "Harwin"
+			(at 92.71 860.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "S0941-46R"
+			(at 92.71 960.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "1"
+			(uuid "17c0a070-fc53-4fe9-a817-8369c478b64c")
+		)
+		(pin "2"
+			(uuid "059071b5-debf-4dc7-aaae-b99e4b84cc37")
+		)
+		(pin "5"
+			(uuid "564ced0f-4c30-4bee-bd62-cef78f349466")
+		)
+		(pin "4"
+			(uuid "25995e94-ce25-46a3-93be-35ce9042eb57")
+		)
+		(pin "3"
+			(uuid "99005182-f712-4666-bace-372534b59f61")
+		)
+		(instances
+			(project "SinglePhotonDetector"
+				(path "/74b1e2e4-bcd1-4fcc-9b31-cf62bc4f9919/3148affa-2a75-4639-9287-5822e10921d4"
+					(reference "MP3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 142.24 176.53 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8817d00f-5399-46a9-95a7-1733fdbfbd29")
+		(property "Reference" "#PWR039"
+			(at 142.24 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 142.24 181.61 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 142.24 176.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 142.24 176.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 142.24 176.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5276a6aa-a1fe-466a-af46-cc0b5d92a285")
+		)
+		(instances
+			(project "SinglePhotonDetector"
+				(path "/74b1e2e4-bcd1-4fcc-9b31-cf62bc4f9919/3148affa-2a75-4639-9287-5822e10921d4"
+					(reference "#PWR039")
 					(unit 1)
 				)
 			)
@@ -2178,6 +3400,388 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 97.79 177.8 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "953af5da-a51a-41e0-90ae-2815bd676a7d")
+		(property "Reference" "#PWR037"
+			(at 97.79 184.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 97.79 182.88 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 97.79 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 97.79 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 97.79 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "515253fd-8833-4baa-b1cd-d968036f1236")
+		)
+		(instances
+			(project "SinglePhotonDetector"
+				(path "/74b1e2e4-bcd1-4fcc-9b31-cf62bc4f9919/3148affa-2a75-4639-9287-5822e10921d4"
+					(reference "#PWR037")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "CustomParts:S0941-46R")
+		(at 33.02 165.1 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "9a230f00-b64b-444c-96be-0aae2b1fff11")
+		(property "Reference" "MP1"
+			(at 38.1 158.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "S0941-46R"
+			(at 38.1 161.29 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "CustomParts:S094146R"
+			(at 49.53 260.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Datasheet" "https://content.harwin.com/m/8abb3b5184c36379/original/DRG-02146-Technical-Drawing-Datasheet-S0941-46R-pdf.pdf"
+			(at 49.53 360.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Description" "Shielding: Micro SMT Shield Clip for 0.135-0.16mm thick Cans (T+R)"
+			(at 33.02 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Height" "1"
+			(at 49.53 560.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" "855-S0941-46R"
+			(at 49.53 660.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Harwin/S0941-46R?qs=je9i9FKnZoyArcEueT2VDw%3D%3D"
+			(at 49.53 760.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "Harwin"
+			(at 49.53 860.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "S0941-46R"
+			(at 49.53 960.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "1"
+			(uuid "0455d978-c8ef-4343-9367-c43806d3f3fb")
+		)
+		(pin "2"
+			(uuid "4dfaff61-076d-4bda-b54f-d90e60069810")
+		)
+		(pin "5"
+			(uuid "96ae071b-3a5f-4ed9-b327-3108dae741c9")
+		)
+		(pin "4"
+			(uuid "edcadb48-fabc-41d7-8f03-e538c873bb50")
+		)
+		(pin "3"
+			(uuid "be19c9c3-c0a3-494b-ab6d-92b0fec5c365")
+		)
+		(instances
+			(project "SinglePhotonDetector"
+				(path "/74b1e2e4-bcd1-4fcc-9b31-cf62bc4f9919/3148affa-2a75-4639-9287-5822e10921d4"
+					(reference "MP1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "CustomParts:S0941-46R")
+		(at 120.65 163.83 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "9c0d4384-7aac-499d-bd53-6924f071e239")
+		(property "Reference" "MP5"
+			(at 125.73 157.48 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "S0941-46R"
+			(at 125.73 160.02 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "CustomParts:S094146R"
+			(at 137.16 258.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Datasheet" "https://content.harwin.com/m/8abb3b5184c36379/original/DRG-02146-Technical-Drawing-Datasheet-S0941-46R-pdf.pdf"
+			(at 137.16 358.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Description" "Shielding: Micro SMT Shield Clip for 0.135-0.16mm thick Cans (T+R)"
+			(at 120.65 163.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Height" "1"
+			(at 137.16 558.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" "855-S0941-46R"
+			(at 137.16 658.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Harwin/S0941-46R?qs=je9i9FKnZoyArcEueT2VDw%3D%3D"
+			(at 137.16 758.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "Harwin"
+			(at 137.16 858.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "S0941-46R"
+			(at 137.16 958.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "1"
+			(uuid "971dde2e-53ab-47f5-97ba-088b4bd353ba")
+		)
+		(pin "2"
+			(uuid "fadda122-95a4-4af1-9038-49e0ce811645")
+		)
+		(pin "5"
+			(uuid "cf4375d8-90cc-48d9-bb5d-060de7e001dd")
+		)
+		(pin "4"
+			(uuid "a48cffb8-60ea-4bdd-a6fd-28cbf43b04e4")
+		)
+		(pin "3"
+			(uuid "da7ec929-b9d3-4ec3-b37d-ce9ec771aa14")
+		)
+		(instances
+			(project "SinglePhotonDetector"
+				(path "/74b1e2e4-bcd1-4fcc-9b31-cf62bc4f9919/3148affa-2a75-4639-9287-5822e10921d4"
+					(reference "MP5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 190.5 71.12 180)
 		(unit 1)
@@ -2254,6 +3858,236 @@
 			(project "Fast_SiPM_Photodetector"
 				(path "/74b1e2e4-bcd1-4fcc-9b31-cf62bc4f9919/3148affa-2a75-4639-9287-5822e10921d4"
 					(reference "R17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "CustomParts:S0941-46R")
+		(at 97.79 165.1 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b83c766e-95a4-407a-ad45-a37beb304d24")
+		(property "Reference" "MP4"
+			(at 102.87 158.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "S0941-46R"
+			(at 102.87 161.29 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "CustomParts:S094146R"
+			(at 114.3 260.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Datasheet" "https://content.harwin.com/m/8abb3b5184c36379/original/DRG-02146-Technical-Drawing-Datasheet-S0941-46R-pdf.pdf"
+			(at 114.3 360.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Description" "Shielding: Micro SMT Shield Clip for 0.135-0.16mm thick Cans (T+R)"
+			(at 97.79 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Height" "1"
+			(at 114.3 560.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" "855-S0941-46R"
+			(at 114.3 660.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Harwin/S0941-46R?qs=je9i9FKnZoyArcEueT2VDw%3D%3D"
+			(at 114.3 760.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "Harwin"
+			(at 114.3 860.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "S0941-46R"
+			(at 114.3 960.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "1"
+			(uuid "eddf1b6f-0e4e-4fd7-ad54-bbf9e874971a")
+		)
+		(pin "2"
+			(uuid "1f33a8e7-d7ea-4f04-820a-86a5dbcee92d")
+		)
+		(pin "5"
+			(uuid "6ef9589d-6f4d-47e0-9bfa-43619aa0212b")
+		)
+		(pin "4"
+			(uuid "13540b62-147e-4aea-ab0a-f5675a4295a3")
+		)
+		(pin "3"
+			(uuid "e854d761-f717-4569-adf5-a1c53a891d06")
+		)
+		(instances
+			(project "SinglePhotonDetector"
+				(path "/74b1e2e4-bcd1-4fcc-9b31-cf62bc4f9919/3148affa-2a75-4639-9287-5822e10921d4"
+					(reference "MP4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 120.65 176.53 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bc70e4e2-145e-4c0f-8b4d-8f3c1617e128")
+		(property "Reference" "#PWR038"
+			(at 120.65 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 120.65 181.61 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 120.65 176.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 120.65 176.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 120.65 176.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ccd3561e-79ae-4577-b956-c3689e932b90")
+		)
+		(instances
+			(project "SinglePhotonDetector"
+				(path "/74b1e2e4-bcd1-4fcc-9b31-cf62bc4f9919/3148affa-2a75-4639-9287-5822e10921d4"
+					(reference "#PWR038")
 					(unit 1)
 				)
 			)
@@ -2421,6 +4255,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 54.61 177.8 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e58080e1-fcff-4241-82e2-dec490b76938")
+		(property "Reference" "#PWR035"
+			(at 54.61 184.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 54.61 182.88 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 54.61 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 54.61 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 54.61 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2d25afec-b0ef-4af4-aaa4-b9317a767a3a")
+		)
+		(instances
+			(project "SinglePhotonDetector"
+				(path "/74b1e2e4-bcd1-4fcc-9b31-cf62bc4f9919/3148affa-2a75-4639-9287-5822e10921d4"
+					(reference "#PWR035")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 102.87 86.36 0)
 		(unit 1)
@@ -2497,6 +4409,158 @@
 			(project "Fast_SiPM_Photodetector"
 				(path "/74b1e2e4-bcd1-4fcc-9b31-cf62bc4f9919/3148affa-2a75-4639-9287-5822e10921d4"
 					(reference "C18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "CustomParts:S0941-46R")
+		(at 54.61 165.1 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f6448eba-98bc-4b6f-a335-e4dd809de77a")
+		(property "Reference" "MP2"
+			(at 59.69 158.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "S0941-46R"
+			(at 59.69 161.29 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "CustomParts:S094146R"
+			(at 71.12 260.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Datasheet" "https://content.harwin.com/m/8abb3b5184c36379/original/DRG-02146-Technical-Drawing-Datasheet-S0941-46R-pdf.pdf"
+			(at 71.12 360.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Description" "Shielding: Micro SMT Shield Clip for 0.135-0.16mm thick Cans (T+R)"
+			(at 54.61 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Height" "1"
+			(at 71.12 560.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" "855-S0941-46R"
+			(at 71.12 660.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Harwin/S0941-46R?qs=je9i9FKnZoyArcEueT2VDw%3D%3D"
+			(at 71.12 760.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "Harwin"
+			(at 71.12 860.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "S0941-46R"
+			(at 71.12 960.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "1"
+			(uuid "3fa0120c-b934-4d77-aa64-7f5228734316")
+		)
+		(pin "2"
+			(uuid "64ba7162-388a-4b82-b913-a059e9fb7a3b")
+		)
+		(pin "5"
+			(uuid "ae301aa4-84b0-4fbf-8a08-8e43317d3898")
+		)
+		(pin "4"
+			(uuid "933ac87e-090b-4118-9bb2-7b04e8c81399")
+		)
+		(pin "3"
+			(uuid "a2d86f18-713a-4574-8635-d06f2304397f")
+		)
+		(instances
+			(project "SinglePhotonDetector"
+				(path "/74b1e2e4-bcd1-4fcc-9b31-cf62bc4f9919/3148affa-2a75-4639-9287-5822e10921d4"
+					(reference "MP2")
 					(unit 1)
 				)
 			)
