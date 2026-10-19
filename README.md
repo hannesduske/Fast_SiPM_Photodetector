@@ -2,7 +2,20 @@
 
 This photodetector is built around the fast output of the onsemi MicroFC-30035 silicon photomultiplier (SiPM).
 It combines an adjustable sensor-bias supply, an integrated low-noise amplifier, and an analog temperature sensor for external temperature control.
-The detector achieves single-photon resolution.
+The detector can measure nanosecond-scale events and achieves single-photon resolution.
+
+<div align="center">
+<table style="border: none;">
+  <tr>
+    <td style="text-align:center">
+      <img src="01_Docs/01_Img/measuring_fast_pulses.jpg" height=200><br>
+    </td>
+    <td style="text-align:center">
+      <img src="01_Docs/01_Img/transient_generic_blue_led.png" height=200><br>
+    </td>
+  </tr>
+</table>
+</div>
 
 ## Table of Contents
 
@@ -24,7 +37,7 @@ The detector achieves single-photon resolution.
   - [3.3 Assembled Detector Boards](#33-assembled-detector-boards)
 - [4. Detector Performance](#4-detector-performance)
   - [4.1 Single Photon Detection](#41-single-photon-detection)
-  - [4.2 Observing Fast Light Pulses](#42-observing-fast-light-pulses)
+  - [4.2 Observing Nanosecond Light Pulses](#42-observing-nanosecond-light-pulses)
   - [4.3 Basic Time-of-Flight Experiments](#43-basic-time-of-flight-experiments)
   - [4.4 Thermal Performance, Active Cooling and Dark Count](#44-thermal-performance-active-cooling-and-dark-count)
 - [5. Mechanical Design](#5-mechanical-design)
@@ -242,7 +255,52 @@ Two board were assembled for performance testing.
 
 ### 4.1 Single Photon Detection
 
-### 4.2 Observing Fast Light Pulses
+### 4.2 Observing Nanosecond Light Pulses
+
+The unique fast output of the MicroFC series makes this detector perfectly suited for observing nanosecond-scale light pulses.
+As an example, the light responses of a generic blue LED and an ams OSRAM PLPT9 450LC_E laser diode were measured while pulsing each source with [this Avalanche Laser Driver](https://github.com/hannesduske/Avalanche_Laser_Driver).
+
+<div align="center">
+  <img src="01_Docs/01_Img/measuring_fast_pulses.jpg" width=700><br>
+  <p>Experimental setup with an avalanche diode driver on the left, a stack of ND filters in the middle and the Fast SiPM Photodetector V0.2 on the right.</p>
+</div>
+
+> ℹ️ The SiPM detector is too sensitive to measure either of the tested light sources directly at the tested operating conditions.
+> A stack of ND8, ND64 and ND1000 neutral-density filters, with a combined attenuation of $512000$, was placed between the source and the detector for these measurements.
+
+In the figures below, the cyan trace is the drive-current pulse and the yellow trace is the SiPM output.
+The scope's pulse-width measurements show a drive-current width of $2.05\ \mathrm{ns}$ and a detector-output width of $5.55\ \mathrm{ns}$ for the blue LED.
+For the PLPT9 laser diode, the corresponding widths are $2.35\ \mathrm{ns}$ and $4.30\ \mathrm{ns}$ for the main optical pulse.
+These measurements show the detector's response to the emitted light, but do not provide an absolute optical power or energy measurement.
+If an additional optical power measurement was available, the measured pulse shape and pulse frequency can be used to estimate the peak optical power.
+
+The additional peaks in the laser-diode response coincide with oscillations visible in the drive-current trace.
+These are likely caused by the reverse-protection Zener diode that is integrated into the PLPT9 package.
+This Zener diode provides a reverse-current path that allows energy stored in the driver capacitor to oscillate with the parasitic inductance of the driver output stage, producing the observed ringing.
+
+The droop following each positive pulse is caused by the high-pass response of the capacitively coupled fast output and the amplifier's DC-blocking capacitors.
+Using high-quality RF capacitors instead of the previously tested C0G capacitors of PCB version V0.1 significantly reduced this droop, but it remains visible in these measurements.
+
+<div align="center">
+<table style="border-collapse: collapse; border: none;">
+    <tr>
+        <td style="border: none; text-align: center;">
+            <img src="01_Docs/01_Img/transient_generic_blue_led.png" width=400><br>
+            <p>Drive-current pulse (cyan) through a generic blue LED and the measured SiPM output (yellow).</p>
+        </td>
+        <td style="border: none; text-align: center;">
+            <img src="01_Docs/01_Img/transient_plpt9_450lc_e.png" width=400><br>
+            <p>Drive-current pulse (cyan) through a PLPT9 450LC_E laser diode and the measured SiPM output (yellow).</p>
+        </td>
+    </tr>
+</table>
+</div>
+
+> ℹ️ The MicroFC-30035 fast output pulses always have a positive polarity regardless of how the device is biased.
+> Note that the on-board RF amplifier inverts the pulse polarity, resulting in **negative-going pulses** at the PCB's SMA output.
+> An additional external amplifier between the detector board and oscilloscope would invert the signal polarity again.
+> To get positive pulse shapes in the above example, the SiPM output traces were inverted by the scope.
+
 
 ### 4.3 Basic Time-of-Flight Experiments
 
