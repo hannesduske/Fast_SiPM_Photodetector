@@ -253,6 +253,48 @@ Two board were assembled for performance testing.
 
 ### 4.1 Single Photon Detection
 
+The MicroFC-30035 produces distinct voltage pulses in response to individual photon events.
+With the on-board amplifier, these pulses can be observed directly on any sufficiently fast oscilloscope.
+The oscilloscope traces below show the pulses at two time scales.
+The detailed view shows their pulse shapes, while the wider view captures multiple events over time.
+
+The pulses have different discrete amplitudes, corresponding to different numbers of SiPM microcells firing in an event.
+Single-cell events are most common, but the wider trace also shows pulses from events in which two or four cells fired.
+This behavior is described in the onsemi [AND9770-D application note](https://www.onsemi.com/pub/Collateral/AND9770-D.PDF).
+
+<div align="center">
+<table style="border-collapse: collapse; border: none;">
+    <tr>
+        <td style="border: none; text-align: center;">
+            <img src="01_Docs/01_Img/single_photon_measurement.png" width="500"><br>
+            <p>SiPM output showing multiple photon events at a bias voltage of $29\ \mathrm{V}$.</p>
+        </td>
+        <td style="border: none; text-align: center;">
+            <img src="01_Docs/01_Img/single_photon_measurement_detail.png" width="500"><br>
+            <p>Detailed view of individual photon pulses at a bias voltage of $29\ \mathrm{V}$.</p>
+        </td>
+    </tr>
+</table>
+</div>
+
+The plot below shows the measured single-photon pulse amplitude versus SiPM bias voltage.
+Across the measured range, the amplitude increases linearly from $1.0\ \mathrm{mV}$ at $26\ \mathrm{V}$ to $3.1\ \mathrm{mV}$ at $29\ \mathrm{V}$.
+
+<div align="center">
+  <img src="04_Evaluation/00_Single_Photon_Detection/single_photon.png" width=700><br>
+  <p>Measured single-photon signal amplitude versus SiPM bias voltage.</p>
+</div>
+
+With the SiPM bias set to $24\ \mathrm{V}$, the board output has a noise level of $87.0\ \mathrm{\mu V RMS}$ at a bandwidth of $250\ \mathrm{MHz}$.
+The measured noise floor is constant across the bias adjustment range, so the signal-to-noise ratio is highest at the largest bias voltage.
+The noise trace also shows spikes at the LT8365 boost converter's switching frequency.
+These spikes remain an unresolved source of interference in detector version V0.2 and should be addressed in future versions.
+
+<div align="center">
+  <img src="01_Docs/01_Img/output_noise_floor.png" width=700><br>
+  <p>Output noise at a SiPM bias voltage of $24\ \mathrm{V}$. Measured RMS value: $87.0\ \mathrm{\mu V}$ at $250\ \mathrm{MHz}$ bandwidth.</p>
+</div>
+
 ### 4.2 Observing Nanosecond Light Pulses
 
 The unique fast output of the MicroFC series makes this detector perfectly suited for observing nanosecond-scale light pulses.
