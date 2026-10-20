@@ -40,12 +40,10 @@ The detector can measure nanosecond-scale events and achieves single-photon reso
   - [4.2 Observing Nanosecond Light Pulses](#42-observing-nanosecond-light-pulses)
   - [4.3 Basic Time-of-Flight Experiments](#43-basic-time-of-flight-experiments)
   - [4.4 Thermal Performance, Active Cooling and Dark Count](#44-thermal-performance-active-cooling-and-dark-count)
-- [5. Mechanical Design](#5-mechanical-design)
-  - [5.1 Active Cooling](#51-active-cooling)
-- [6. References](#6-references)
-  - [6.1 Datasheets of Main Components](#61-datasheets-of-main-components)
-  - [6.2 Reference Documents](#62-reference-documents)
-  - [6.3 Design Tools](#63-design-tools)
+- [5. References](#5-references)
+  - [5.1 Datasheets of Main Components](#51-datasheets-of-main-components)
+  - [5.2 Reference Documents](#52-reference-documents)
+  - [5.3 Design Tools](#53-design-tools)
 
 ## 1. Technical Specification
 
@@ -389,18 +387,44 @@ The detector was operated at a constant bias voltage of $25.1\ \mathrm{V}$, with
 </table>
 </div>
 
-#### Active Cooling
+#### Active Cooling and Dark Count
 
+The thermal layout reduces heat build-up on the PCB, while active cooling offers a way to lower the SiPM temperature further.
+This test evaluates the active-cooling concept and demonstrates how much it can improve detector performance by reducing the dark-count rate.
+A V0.2 detector was mounted on a Peltier element coupled to a heatsink.
+The images below show the assembly and its temperature distribution during operation.
+The heatsink on the hot side of the Peltier element is crucial for cooling the detector board below ambient temperature.
 
-#### Measured Dark Count
+<div align="center">
+<table style="border-collapse: collapse; border: none;">
+    <tr>
+        <td style="border: none; text-align: center;">
+            <img src="01_Docs/01_Img/active_cooling.jpg" width="400"><br>
+            <p>V0.2 detector mounted on a Peltier element and heatsink</p>
+        </td>
+        <td style="border: none; text-align: center;">
+            <img src="01_Docs/01_Img/active_cooling_thermal.jpg" width="400"><br>
+            <p>Thermal image of the detector during active cooling</p>
+        </td>
+    </tr>
+</table>
+</div>
 
+Starting at room temperature, the Peltier cooler was used to gradually lowered the detector temperature while the dark-count rate was measured at bias voltages of $27\ \mathrm{V}$, $28\ \mathrm{V}$ and $29\ \mathrm{V}$.
+For each plotted data point, the oscilloscope's pulse-counting function averaged the pulse counts across 100 consecutive $200\ \mathrm{\mu s}$ measurement intervals.
+The temperature shown in the plot is measured by the on-board MCP9700A sensor.
+Because of the thermal gradient between the PCB and the SiPM, this reading is somewhat lower than the actual SiPM temperature.
 
-## 5. Mechanical Design
+As the temperature decreased from $23\ \mathrm{^\circ C}$ to $9\ \mathrm{^\circ C}$, the dark-count rate fell by about $64\%$ at a bias voltage of $27\ \mathrm{V}$, $64\%$ at $28\ \mathrm{V}$, and $61\%$ at $29\ \mathrm{V}$.
+The reduction is substantial across all three bias settings, while the higher-bias measurements consistently show a higher dark-count rate.
 
-### 5.1 Active Cooling
+<div align="center">
+  <img src="04_Evaluation/01_Dark_Count/dark_count.png" width="700"><br>
+  <p>Measured SiPM dark-count rate versus temperature for three bias voltages.</p>
+</div>
 
-## 6. References
-### 6.1 Datasheets of Main Components
+## 5. References
+### 5.1 Datasheets of Main Components
 - [MicroFC-30035](https://www.onsemi.com/pub/Collateral/MICROC-SERIES-D.PDF) Silicon photomultiplier
 - [NCP731](https://www.onsemi.com/pub/Collateral/NCP731-D.PDF) Low-noise LDO
 - [LT8365](https://www.analog.com/media/en/technical-documentation/data-sheets/lt8365.pdf) Boost converter
@@ -409,13 +433,13 @@ The detector was operated at a constant bias voltage of $25.1\ \mathrm{V}$, with
 - [GALI-S66+](https://www.minicircuits.com/pdfs/GALI-S66+.pdf) RF amplifier
 - [MCP9700A](https://ww1.microchip.com/downloads/en/devicedoc/20001942g.pdf) Temperature sensor
 
-### 6.2 Reference Documents
+### 5.2 Reference Documents
 - [AND9770-D](https://www.onsemi.com/pub/Collateral/AND9770-D.PDF) Introduction to the Silicon Photomultiplier (SiPM)
 - [AND9782-D](https://www.onsemi.com/pub/Collateral/AND9782-D.PDF) Biasing and Readout of SiPM Sensors
 - [AND9787-D](https://www.onsemi.com/pub/Collateral/AND9787-D.PDF) SiPM SMA Board Experiment Guide
 - [AND9809-D](https://www.onsemi.com/pub/Collateral/AND9809-D.PDF) Reference Designs for the SMA and SMTPA MLP-Packaged SiPM Evaluation Boards
 
-### 6.3 Design Tools
+### 5.3 Design Tools
 - [LTSpice](https://www.analog.com/en/resources/design-tools-and-calculators/ltspice-simulator.html) Circuit simulation
 - [KiCad 10](https://www.kicad.org/blog/2026/03/Version-10.0.0-Released/) Circuit board design
 - [SMath Studio](https://smath.com/) Design calculations

@@ -18,3 +18,8 @@ fp-info-cache
 *.plt
 *.log
 *.net
+
+# VSCode/ Python
+*~lock*
+*.pyc
+__pycache__/
