@@ -36,10 +36,11 @@ The detector can measure nanosecond-scale events and achieves single-photon reso
   - [3.2 Peripheral Components](#32-peripheral-components)
   - [3.3 Assembled Detector Boards](#33-assembled-detector-boards)
 - [4. Detector Performance](#4-detector-performance)
-  - [4.1 Single Photon Detection](#41-single-photon-detection)
-  - [4.2 Observing Nanosecond Light Pulses](#42-observing-nanosecond-light-pulses)
-  - [4.3 Basic Time-of-Flight Experiments](#43-basic-time-of-flight-experiments)
-  - [4.4 Thermal Performance, Active Cooling and Dark Count](#44-thermal-performance-active-cooling-and-dark-count)
+  - [4.1 Output Noise Performance](#41-output-noise-performance)
+  - [4.2 Thermal Performance, Active Cooling and Dark Count](#42-thermal-performance-active-cooling-and-dark-count)
+  - [4.3 Single Photon Detection](#43-single-photon-detection)
+  - [4.4 Observing Nanosecond Light Pulses](#44-observing-nanosecond-light-pulses)
+  - [4.5 Basic Time-of-Flight Experiments](#45-basic-time-of-flight-experiments)
 - [5. References](#5-references)
   - [5.1 Datasheets of Main Components](#51-datasheets-of-main-components)
   - [5.2 Reference Documents](#52-reference-documents)
@@ -90,7 +91,7 @@ Because it is a direct voltage output, it can be amplified with standard wideban
 The MicroFC-30035 is sensitive to blue light and has its peak sensitivity at $420\ \mathrm{nm}$.
 
 <div align="center">
-  <img src="01_Docs/01_Img/microfc_pde.png" width=600><br>
+  <img src="01_Docs/01_Img/microfc_pde.png" width=500><br>
   <p>Photon Detection Efficiency (PDE) of the MicroFC-30035 (<a href="https://www.onsemi.com/pub/Collateral/MICROC-SERIES-D.PDF">Datasheet p. 7</a>)</p>
 </div>
 
@@ -217,7 +218,7 @@ Additionally, the amplifier stage is designed to fit inside a $10\ \mathrm{mm} \
 The center of the bottom layer of the PCB is intentionally kept free of components and THT holes to allow a $40\ \mathrm{mm} \times 40\ \mathrm{mm}$ thermoelectric cooler to be mounted directly below the sensor.
 
 <div align="center">
-  <img src="01_Docs/01_Img/pcb_v0_2_design.jpg" width=700><br>
+  <img src="01_Docs/01_Img/pcb_v0_2_design.jpg" width=420><br>
 </div>
 
 ### 3.2 Peripheral Components
@@ -225,7 +226,7 @@ The center of the bottom layer of the PCB is intentionally kept free of componen
 Below is a functional description of the main peripheral components of the PCB.
 
 <div align="center">
-<img src="01_Docs/01_Img/pcb_v0_2_asm_desc.jpg" width=700><br>
+<img src="01_Docs/01_Img/pcb_v0_2_asm_desc.jpg" width=500><br>
 
 | Reference | Description |
 |-|-|
@@ -245,13 +246,172 @@ The front and back of the assembled Fast SiPM Photodetector V0.2 PCB are shown b
 Two board were assembled for performance testing.
 
 <div align="center">
-  <img src="01_Docs/01_Img/Fast_SiPM_Photodetector_V0.2.png" width=700><br>
+  <img src="01_Docs/01_Img/Fast_SiPM_Photodetector_V0.2.png" width=600><br>
   <p>Front and back side of the assembled Fast SiPM Photodetector V0.2 PCB.</p>
 </div>
 
 ## 4. Detector Performance
 
-### 4.1 Single Photon Detection
+### 4.1 Output Noise Performance
+
+With the SiPM bias set to $24\ \mathrm{V}$, the measured output noise is $87.0\ \mathrm{\mu V RMS}$ over a bandwidth of $250\ \mathrm{MHz}$.
+The dense baseline noise floor, approximately $0.8\ \mathrm{mV}$ peak-to-peak, remains constant across the bias adjustment range and across the input voltage range.
+The trace also shows spikes at the LT8365 boost converter's switching frequency, with an amplitude of approximately $1.5\ \mathrm{mV}$ peak-to-peak.
+As the input voltage increases, the spike frequency decreases and the measured total noise is reduced.
+
+The main issue of these spikes is their interfere with single-photon detection at bias voltages below $27\ \mathrm{V}$ because their amplitude is similar to that of single-photon events.
+At bias voltages above $27\ \mathrm{V}$, the noise spikes can be distinguished clearly from real detection events.
+
+<div align="center">
+<table style="border-collapse: collapse; border: none;">
+  <tr>
+    <td style="border: none; text-align: center;">
+      <img src="01_Docs/01_Img/output_noise1.png" width="400"><br>
+      <p>Output noise at a SiPM bias voltage of $24\ \mathrm{V}$. Measured RMS value: $87.0\ \mathrm{\mu V}$ at $250\ \mathrm{MHz}$ bandwidth.</p>
+    </td>
+    <td style="border: none; text-align: center;">
+      <img src="01_Docs/01_Img/output_noise2.png" width="400"><br>
+      <p>Output-noise spikes (yellow) coincide with the LT8365 switching transitions (blue).</p>
+    </td>
+  </tr>
+</table>
+</div>
+
+The LT8365 switching node has very fast transitions, exceeding $850\ \mathrm{mV/ns}$, which couple into the output signal.
+None of the following measures effectively attenuated the spikes:
+- Decoupling the SiPM with an additional small, $100\ \mathrm{pF}$ C0G 0402 capacitor
+- Adding a grounded metal shielding can around the boost converter
+- Adding capacitance to the LT8365 switching node for damping
+- Adding an RC snubber to the switching node
+
+In these tests, adding capacitance increased the ringing and, depending on the value, also increased the spike amplitude.
+
+The most promising way to reduce this interference is to slow the switching edges. The LT8365 uses an integrated switch, so its transition speed cannot be adjusted.
+A boost converter with an external switch may be a better choice for a future revision because its switching speed can be tuned to limit interference.
+Alternatively, a specialized ultra-low-EMI converter such as the [LT8336](https://www.analog.com/en/products/lt8336.html) may also help reduce emissions.
+
+### 4.2 Thermal Performance, Active Cooling and Dark Count
+
+#### Bias Voltage and Dark Count
+
+SiPM dark-count rate and dark current increase with temperature and overvoltage, as shown in the left-hand plot from the MicroFC datasheet.
+The plot shows the dark current of the larger $6\ \mathrm{mm} \times 6\ \mathrm{mm}$ MicroFC-60035 sensor.
+Its absolute values therefore differ from those of the MicroFC-30035, but the general trends are similar.
+
+<div align="center">
+<table style="border-collapse: collapse; border: none;">
+  <tr>
+    <td style="border: none; text-align: center;">
+      <img src="01_Docs/01_Img/microfc_dark_count.png" width=300><br>
+      <p>Dark current versus voltage and temperature of the MicroFC-60035 (<a href="https://www.onsemi.com/pub/Collateral/MICROC-SERIES-D.PDF">Datasheet p. 8</a>)</p>
+    </td>
+    <td style="border: none; text-align: center;">
+      <img src="01_Docs/01_Img/microfc_dark_gain.png" width=300><br>
+      <p>Gain versus voltage of the MicroFC family (<a href="https://www.onsemi.com/pub/Collateral/MICROC-SERIES-D.PDF">Datasheet p. 8</a>)</p>
+    </td>
+  </tr>
+</table>
+</div>
+
+The voltage and temperature dependence of dark-count rate poses an inherent challenge for high-sensitivity applications.
+These applications require high gain, which is achieved by increasing the SiPM's overvoltage, while also requiring a low dark-count rate.
+The plots show that reducing the temperature lowers the dark current, while the gain is primarily determined by overvoltage.
+In practice, this makes thermal management important.
+This design addresses it through careful thermal layout and optional active temperature control.
+
+
+#### Thermal Layout of the Detector PCB
+
+The first iteration of the detector PCB had slots milled around the SiPM to thermally isolate it from the surrounding components.
+This turned out to be a poor design choice because the SiPM itself generates more heat than any other component.
+The slots did not isolate the SiPM from heat generated by other components but prevented it from dissipating its own heat, resulting in a higher sensor temperature.
+In the second iteration, the slots were removed and replaced with a copper pour around the SiPM, with many vias connecting it thermally to the copper planes on the three lower PCB layers.
+
+The thermal images below show the improved thermal layout of V0.2.
+At the same bias voltage and after the same operating time, the sensor hotspot reading decreased by $5.9\ \mathrm{^\circ C}$.
+Both detectors were set to a bias voltage of $25.1\ \mathrm{V}$, and no external heat sink or cooler was attached to the bottom of either PCB.
+
+<div align="center">
+<table style="border-collapse: collapse; border: none;">
+  <tr>
+    <td style="border: none; text-align: center;">
+      <img src="01_Docs/01_Img/thermal_v0_1.png" width=300><br>
+      <p>PCB V0.1: 39.7 °C</p>
+    </td>
+    <td style="border: none; text-align: center;">
+      <img src="01_Docs/01_Img/thermal_v0_2.png" width=300><br>
+      <p>PCB V0.2: 33.8 °C</p>
+    </td>
+  </tr>
+</table>
+</div>
+
+The following thermal images of the second PCB version were taken 1 second, 30 seconds, 1 minute and 5 minutes after power-on.
+They show the SiPM as the main local heat source and the improved thermal coupling between the sensor and the PCB, which helps spread the heat.
+The detector was operated at a constant bias voltage of $25.1\ \mathrm{V}$, with no external heat sink or cooler attached to the bottom of the PCB.
+
+<div align="center">
+<table style="border-collapse: collapse; border: none;">
+  <tr>
+    <td style="border: none; text-align: center;">
+      <img src="01_Docs/01_Img/thermal1_1s_crop.jpg" width="400"><br>
+      <p>1 second after power-on</p>
+    </td>
+    <td style="border: none; text-align: center;">
+      <img src="01_Docs/01_Img/thermal2_30s_crop.jpg" width="400"><br>
+      <p>30 seconds after power-on</p>
+    </td>
+  </tr>
+  <tr>
+    <td style="border: none; text-align: center;">
+      <img src="01_Docs/01_Img/thermal3_1min_crop.jpg" width="400"><br>
+      <p>1 minute after power-on</p>
+    </td>
+    <td style="border: none; text-align: center;">
+      <img src="01_Docs/01_Img/thermal6_5min_crop.jpg" width="400"><br>
+      <p>5 minutes after power-on</p>
+    </td>
+  </tr>
+</table>
+</div>
+
+#### Active Cooling and Dark Count
+
+The thermal layout reduces heat build-up on the PCB, while active cooling offers a way to lower the SiPM temperature further.
+This test evaluates the active-cooling concept and demonstrates how much it can improve detector performance by reducing the dark-count rate.
+A V0.2 detector was mounted on a Peltier element coupled to a heatsink.
+The images below show the assembly and its temperature distribution during operation.
+The heatsink on the hot side of the Peltier element is crucial for cooling the detector board below ambient temperature.
+
+<div align="center">
+<table style="border-collapse: collapse; border: none;">
+  <tr>
+    <td style="border: none; text-align: center;">
+      <img src="01_Docs/01_Img/active_cooling.jpg" width="400"><br>
+      <p>V0.2 detector mounted on a Peltier element and heatsink</p>
+    </td>
+    <td style="border: none; text-align: center;">
+      <img src="01_Docs/01_Img/active_cooling_thermal.jpg" width="400"><br>
+      <p>Thermal image of the detector during active cooling</p>
+    </td>
+  </tr>
+</table>
+</div>
+
+Starting at room temperature, the Peltier cooler was used to gradually lowered the detector temperature while the dark-count rate was measured at bias voltages of $27\ \mathrm{V}$, $28\ \mathrm{V}$ and $29\ \mathrm{V}$.
+For each plotted data point, the oscilloscope's pulse-counting function averaged the pulse counts across 100 consecutive $200\ \mathrm{\mu s}$ measurement intervals.
+The temperature shown in the plot is measured by the on-board MCP9700A sensor.
+Because of the thermal gradient between the PCB and the SiPM, this reading is somewhat lower than the actual SiPM temperature.
+
+As the temperature decreased from $23\ \mathrm{^\circ C}$ to $9\ \mathrm{^\circ C}$, the dark-count rate fell by about $64\%$ at a bias voltage of $27\ \mathrm{V}$, $64\%$ at $28\ \mathrm{V}$, and $61\%$ at $29\ \mathrm{V}$.
+The reduction is substantial across all three bias settings, while the higher-bias measurements consistently show a higher dark-count rate.
+
+<div align="center">
+  <img src="04_Evaluation/01_Dark_Count/dark_count.png" width="700"><br>
+  <p>Measured SiPM dark-count rate versus temperature for three bias voltages.</p>
+</div>
+
+### 4.3 Single Photon Detection
 
 The MicroFC-30035 produces distinct voltage pulses in response to individual photon events.
 With the on-board amplifier, these pulses can be observed directly on any sufficiently fast oscilloscope.
@@ -266,11 +426,11 @@ This behavior is described in the onsemi [AND9770-D application note](https://ww
 <table style="border-collapse: collapse; border: none;">
     <tr>
         <td style="border: none; text-align: center;">
-            <img src="01_Docs/01_Img/single_photon_measurement.png" width="500"><br>
+            <img src="01_Docs/01_Img/single_photon_measurement.png" width="400"><br>
             <p>SiPM output showing multiple photon events at a bias voltage of $29\ \mathrm{V}$.</p>
         </td>
         <td style="border: none; text-align: center;">
-            <img src="01_Docs/01_Img/single_photon_measurement_detail.png" width="500"><br>
+            <img src="01_Docs/01_Img/single_photon_measurement_detail.png" width="400"><br>
             <p>Detailed view of individual photon pulses at a bias voltage of $29\ \mathrm{V}$.</p>
         </td>
     </tr>
@@ -281,27 +441,17 @@ The plot below shows the measured single-photon pulse amplitude versus SiPM bias
 Across the measured range, the amplitude increases linearly from $1.0\ \mathrm{mV}$ at $26\ \mathrm{V}$ to $3.1\ \mathrm{mV}$ at $29\ \mathrm{V}$.
 
 <div align="center">
-  <img src="04_Evaluation/00_Single_Photon_Detection/single_photon.png" width=700><br>
+  <img src="04_Evaluation/00_Single_Photon_Detection/single_photon.png" width=500><br>
   <p>Measured single-photon signal amplitude versus SiPM bias voltage.</p>
 </div>
 
-With the SiPM bias set to $24\ \mathrm{V}$, the board output has a noise level of $87.0\ \mathrm{\mu V RMS}$ at a bandwidth of $250\ \mathrm{MHz}$.
-The measured noise floor is constant across the bias adjustment range, so the signal-to-noise ratio is highest at the largest bias voltage.
-The noise trace also shows spikes at the LT8365 boost converter's switching frequency.
-These spikes remain an unresolved source of interference in detector version V0.2 and should be addressed in future versions.
-
-<div align="center">
-  <img src="01_Docs/01_Img/output_noise_floor.png" width=700><br>
-  <p>Output noise at a SiPM bias voltage of $24\ \mathrm{V}$. Measured RMS value: $87.0\ \mathrm{\mu V}$ at $250\ \mathrm{MHz}$ bandwidth.</p>
-</div>
-
-### 4.2 Observing Nanosecond Light Pulses
+### 4.4 Observing Nanosecond Light Pulses
 
 The unique fast output of the MicroFC series makes this detector perfectly suited for observing nanosecond-scale light pulses.
 As an example, the light responses of a generic blue LED and an ams OSRAM PLPT9 450LC_E laser diode were measured while pulsing each source with [this Avalanche Laser Driver](https://github.com/hannesduske/Avalanche_Laser_Driver).
 
 <div align="center">
-  <img src="01_Docs/01_Img/measuring_fast_pulses.jpg" width=700><br>
+  <img src="01_Docs/01_Img/measuring_fast_pulses.jpg" width=600><br>
   <p>Experimental setup with an avalanche diode driver on the left, a stack of ND filters in the middle and the Fast SiPM Photodetector V0.2 on the right.</p>
 </div>
 
@@ -341,129 +491,7 @@ Using high-quality RF capacitors instead of the previously tested C0G capacitors
 > An additional external amplifier between the detector board and oscilloscope would invert the signal polarity again.
 > To get positive pulse shapes in the above example, the SiPM output traces were inverted by the scope.
 
-
-### 4.3 Basic Time-of-Flight Experiments
-
-### 4.4 Thermal Performance, Active Cooling and Dark Count
-
-#### Bias Voltage and Dark Count
-
-SiPM dark-count rate and dark current increase with temperature and overvoltage, as shown in the left-hand plot from the MicroFC datasheet.
-The plot shows the dark current of the larger $6\ \mathrm{mm} \times 6\ \mathrm{mm}$ MicroFC-60035 sensor.
-Its absolute values therefore differ from those of the MicroFC-30035, but the general trends are similar.
-
-<div align="center">
-<table style="border-collapse: collapse; border: none;">
-    <tr>
-        <td style="border: none; text-align: center;">
-            <img src="01_Docs/01_Img/microfc_dark_count.png" width=400><br>
-            <p>Dark current versus voltage and temperature of the MicroFC-60035<br/>(<a href="https://www.onsemi.com/pub/Collateral/MICROC-SERIES-D.PDF">Datasheet p. 8</a>)</p>
-        </td>
-        <td style="border: none; text-align: center;">
-            <img src="01_Docs/01_Img/microfc_dark_gain.png" width=400><br>
-            <p>Gain versus voltage of the MicroFC family<br/>(<a href="https://www.onsemi.com/pub/Collateral/MICROC-SERIES-D.PDF">Datasheet p. 8</a>)</p>
-        </td>
-    </tr>
-</table>
-</div>
-
-The voltage and temperature dependence of dark-count rate poses an inherent challenge for high-sensitivity applications.
-These applications require high gain, which is achieved by increasing the SiPM's overvoltage, while also requiring a low dark-count rate.
-The plots show that reducing the temperature lowers the dark current, while the gain is primarily determined by overvoltage.
-In practice, this makes thermal management important.
-This design addresses it through careful thermal layout and optional active temperature control.
-
-
-#### Thermal Layout of the Detector PCB
-
-The first iteration of the detector PCB had slots milled around the SiPM to thermally isolate it from the surrounding components.
-This turned out to be a poor design choice because the SiPM itself generates more heat than any other component.
-The slots did not isolate the SiPM from heat generated by other components but prevented it from dissipating its own heat, resulting in a higher sensor temperature.
-In the second iteration, the slots were removed and replaced with a copper pour around the SiPM, with many vias connecting it thermally to the copper planes on the three lower PCB layers.
-
-The thermal images below show the improved thermal layout of V0.2.
-At the same bias voltage and after the same operating time, the sensor hotspot reading decreased by $5.9\ \mathrm{^\circ C}$.
-Both detectors were set to a bias voltage of $25.1\ \mathrm{V}$, and no external heat sink or cooler was attached to the bottom of either PCB.
-
-<div align="center">
-<table style="border-collapse: collapse; border: none;">
-    <tr>
-        <td style="border: none; text-align: center;">
-            <img src="01_Docs/01_Img/thermal_v0_1.png" width=300><br>
-            <p>PCB V0.1: 39.7 °C</p>
-        </td>
-        <td style="border: none; text-align: center;">
-            <img src="01_Docs/01_Img/thermal_v0_2.png" width=300><br>
-            <p>PCB V0.2: 33.8 °C</p>
-        </td>
-    </tr>
-</table>
-</div>
-
-The following thermal images of the second PCB version were taken 1 second, 30 seconds, 1 minute and 5 minutes after power-on.
-They show the SiPM as the main local heat source and the improved thermal coupling between the sensor and the PCB, which helps spread the heat.
-The detector was operated at a constant bias voltage of $25.1\ \mathrm{V}$, with no external heat sink or cooler attached to the bottom of the PCB.
-
-<div align="center">
-<table style="border-collapse: collapse; border: none;">
-    <tr>
-        <td style="border: none; text-align: center;">
-            <img src="01_Docs/01_Img/thermal1_1s_crop.jpg" width="400"><br>
-            <p>1 second after power-on</p>
-        </td>
-        <td style="border: none; text-align: center;">
-            <img src="01_Docs/01_Img/thermal2_30s_crop.jpg" width="400"><br>
-            <p>30 seconds after power-on</p>
-        </td>
-    </tr>
-    <tr>
-        <td style="border: none; text-align: center;">
-            <img src="01_Docs/01_Img/thermal3_1min_crop.jpg" width="400"><br>
-            <p>1 minute after power-on</p>
-        </td>
-        <td style="border: none; text-align: center;">
-            <img src="01_Docs/01_Img/thermal6_5min_crop.jpg" width="400"><br>
-            <p>5 minutes after power-on</p>
-        </td>
-    </tr>
-</table>
-</div>
-
-#### Active Cooling and Dark Count
-
-The thermal layout reduces heat build-up on the PCB, while active cooling offers a way to lower the SiPM temperature further.
-This test evaluates the active-cooling concept and demonstrates how much it can improve detector performance by reducing the dark-count rate.
-A V0.2 detector was mounted on a Peltier element coupled to a heatsink.
-The images below show the assembly and its temperature distribution during operation.
-The heatsink on the hot side of the Peltier element is crucial for cooling the detector board below ambient temperature.
-
-<div align="center">
-<table style="border-collapse: collapse; border: none;">
-    <tr>
-        <td style="border: none; text-align: center;">
-            <img src="01_Docs/01_Img/active_cooling.jpg" width="400"><br>
-            <p>V0.2 detector mounted on a Peltier element and heatsink</p>
-        </td>
-        <td style="border: none; text-align: center;">
-            <img src="01_Docs/01_Img/active_cooling_thermal.jpg" width="400"><br>
-            <p>Thermal image of the detector during active cooling</p>
-        </td>
-    </tr>
-</table>
-</div>
-
-Starting at room temperature, the Peltier cooler was used to gradually lowered the detector temperature while the dark-count rate was measured at bias voltages of $27\ \mathrm{V}$, $28\ \mathrm{V}$ and $29\ \mathrm{V}$.
-For each plotted data point, the oscilloscope's pulse-counting function averaged the pulse counts across 100 consecutive $200\ \mathrm{\mu s}$ measurement intervals.
-The temperature shown in the plot is measured by the on-board MCP9700A sensor.
-Because of the thermal gradient between the PCB and the SiPM, this reading is somewhat lower than the actual SiPM temperature.
-
-As the temperature decreased from $23\ \mathrm{^\circ C}$ to $9\ \mathrm{^\circ C}$, the dark-count rate fell by about $64\%$ at a bias voltage of $27\ \mathrm{V}$, $64\%$ at $28\ \mathrm{V}$, and $61\%$ at $29\ \mathrm{V}$.
-The reduction is substantial across all three bias settings, while the higher-bias measurements consistently show a higher dark-count rate.
-
-<div align="center">
-  <img src="04_Evaluation/01_Dark_Count/dark_count.png" width="700"><br>
-  <p>Measured SiPM dark-count rate versus temperature for three bias voltages.</p>
-</div>
+### 4.5 Basic Time-of-Flight Experiments
 
 ## 5. References
 ### 5.1 Datasheets of Main Components
