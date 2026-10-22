@@ -40,7 +40,6 @@ The detector can measure nanosecond-scale events and achieves single-photon reso
   - [4.2 Thermal Performance, Active Cooling and Dark Count](#42-thermal-performance-active-cooling-and-dark-count)
   - [4.3 Single Photon Detection](#43-single-photon-detection)
   - [4.4 Observing Nanosecond Light Pulses](#44-observing-nanosecond-light-pulses)
-  - [4.5 Basic Time-of-Flight Experiments](#45-basic-time-of-flight-experiments)
 - [5. References](#5-references)
   - [5.1 Datasheets of Main Components](#51-datasheets-of-main-components)
   - [5.2 Reference Documents](#52-reference-documents)
@@ -178,10 +177,10 @@ An external potentiometer with a resistance of at least $100\ \mathrm{k}\Omega$ 
 
 The fast-output signal is amplified by the GALI-S66+ RF amplifier $\mathrm{U1}$.
 This stage is critical to detector performance and is laid out as a dedicated high-frequency signal path with an optional shielding can.
-The high-frequency path uses $50\ \Omega$ transmission lines and C0G/NP0 capacitors for improved performance.
+The high-frequency path uses $50\ \Omega$ transmission lines and high-quality C0G/NP0 capacitors for improved performance.
 The amplifier's bias tee uses two RF inductors of different sizes, $\mathrm{L3}$ and $\mathrm{L4}$, for good performance over a wide frequency range.
 
-A second capacitance multiplier stage with the Darlington transistor $\mathrm{Q3}$, similar to the one in the SiPM bias supply, is used to filter the amplifier voltage rail.
+A second capacitance multiplier stage with the Darlington transistor $\mathrm{Q3}$, similar to the one in the SiPM bias supply, is used to filter the amplifier supply voltage.
 
 ### 2.7 Temperature Sensor
 
@@ -243,11 +242,11 @@ Below is a functional description of the main peripheral components of the PCB.
 ### 3.3 Assembled Detector Boards
 
 The front and back of the assembled Fast SiPM Photodetector V0.2 PCB are shown below.
-Two board were assembled for performance testing.
+Two boards were assembled for performance testing.
 
 <div align="center">
   <img src="01_Docs/01_Img/Fast_SiPM_Photodetector_V0.2.png" width=600><br>
-  <p>Front and back side of the assembled Fast SiPM Photodetector V0.2 PCB.</p>
+  <p>Front and back sides of the assembled Fast SiPM Photodetector V0.2 PCB.</p>
 </div>
 
 ## 4. Detector Performance
@@ -259,8 +258,8 @@ The dense baseline noise floor, approximately $0.8\ \mathrm{mV}$ peak-to-peak, r
 The trace also shows spikes at the LT8365 boost converter's switching frequency, with an amplitude of approximately $1.5\ \mathrm{mV}$ peak-to-peak.
 As the input voltage increases, the spike frequency decreases and the measured total noise is reduced.
 
-The main issue of these spikes is their interfere with single-photon detection at bias voltages below $27\ \mathrm{V}$ because their amplitude is similar to that of single-photon events.
-At bias voltages above $27\ \mathrm{V}$, the noise spikes can be distinguished clearly from real detection events.
+The main issue with these spikes is that they interfere with single-photon detection at bias voltages below $27\ \mathrm{V}$ because their amplitude is similar to that of single-photon events.
+At bias voltages above $27\ \mathrm{V}$, the noise spikes can be distinguished cleanly from real detection events.
 
 <div align="center">
 <table style="border-collapse: collapse; border: none;">
@@ -281,22 +280,22 @@ The LT8365 switching node has very fast transitions, exceeding $850\ \mathrm{mV/
 None of the following measures effectively attenuated the spikes:
 - Decoupling the SiPM with an additional small, $100\ \mathrm{pF}$ C0G 0402 capacitor
 - Adding a grounded metal shielding can around the boost converter
-- Adding capacitance to the LT8365 switching node for damping
+- Adding small capacitors to the LT8365 switching node for damping
 - Adding an RC snubber to the switching node
 
 In these tests, adding capacitance increased the ringing and, depending on the value, also increased the spike amplitude.
 
-The most promising way to reduce this interference is to slow the switching edges. The LT8365 uses an integrated switch, so its transition speed cannot be adjusted.
+The most promising way to reduce this interference is to slow the switching edges directly.
+The LT8365 uses an integrated switch, so its transition speed cannot be adjusted.
 A boost converter with an external switch may be a better choice for a future revision because its switching speed can be tuned to limit interference.
-Alternatively, a specialized ultra-low-EMI converter such as the [LT8336](https://www.analog.com/en/products/lt8336.html) may also help reduce emissions.
+Alternatively, a specialized ultra-low-EMI converter such as the [LT8336](https://www.analog.com/en/products/lt8336.html) may also reduce emissions.
 
 ### 4.2 Thermal Performance, Active Cooling and Dark Count
 
 #### Bias Voltage and Dark Count
 
-SiPM dark-count rate and dark current increase with temperature and overvoltage, as shown in the left-hand plot from the MicroFC datasheet.
-The plot shows the dark current of the larger $6\ \mathrm{mm} \times 6\ \mathrm{mm}$ MicroFC-60035 sensor.
-Its absolute values therefore differ from those of the MicroFC-30035, but the general trends are similar.
+The SiPM dark-count rate and dark current increase with temperature and overvoltage, as shown in the left-hand plot from the MicroFC datasheet.
+The plot shows the dark current of the larger $6\ \mathrm{mm} \times 6\ \mathrm{mm}$ MicroFC-60035 sensor so the absolute values differ for the MicroFC-30035, but the trends are similar.
 
 <div align="center">
 <table style="border-collapse: collapse; border: none;">
@@ -314,20 +313,19 @@ Its absolute values therefore differ from those of the MicroFC-30035, but the ge
 </div>
 
 The voltage and temperature dependence of dark-count rate poses an inherent challenge for high-sensitivity applications.
-These applications require high gain, which is achieved by increasing the SiPM's overvoltage, while also requiring a low dark-count rate.
-The plots show that reducing the temperature lowers the dark current, while the gain is primarily determined by overvoltage.
-In practice, this makes thermal management important.
-This design addresses it through careful thermal layout and optional active temperature control.
+These require high gain, which is achieved by increasing the overvoltage of the SiPM, but this also increases the dark-count rate.
+In practice, this makes thermal management important to keep the dark-count rate as low as possible.
+This design addresses this through careful thermal layout and optional active temperature control.
 
 
 #### Thermal Layout of the Detector PCB
 
 The first iteration of the detector PCB had slots milled around the SiPM to thermally isolate it from the surrounding components.
-This turned out to be a poor design choice because the SiPM itself generates more heat than any other component.
+This turned out to be a poor design choice because the SiPM itself generates more heat than any other component on the board.
 The slots did not isolate the SiPM from heat generated by other components but prevented it from dissipating its own heat, resulting in a higher sensor temperature.
 In the second iteration, the slots were removed and replaced with a copper pour around the SiPM, with many vias connecting it thermally to the copper planes on the three lower PCB layers.
 
-The thermal images below show the improved thermal layout of V0.2.
+The thermal images below show the improved thermal layout of V0.2 compared to V0.1.
 At the same bias voltage and after the same operating time, the sensor hotspot reading decreased by $5.9\ \mathrm{^\circ C}$.
 Both detectors were set to a bias voltage of $25.1\ \mathrm{V}$, and no external heat sink or cooler was attached to the bottom of either PCB.
 
@@ -398,13 +396,13 @@ The heatsink on the hot side of the Peltier element is crucial for cooling the d
 </table>
 </div>
 
-Starting at room temperature, the Peltier cooler was used to gradually lowered the detector temperature while the dark-count rate was measured at bias voltages of $27\ \mathrm{V}$, $28\ \mathrm{V}$ and $29\ \mathrm{V}$.
+Starting at room temperature, the Peltier cooler was used to gradually lower the detector temperature while the dark-count rate was measured at bias voltages of $27\ \mathrm{V}$, $28\ \mathrm{V}$ and $29\ \mathrm{V}$.
 For each plotted data point, the oscilloscope's pulse-counting function averaged the pulse counts across 100 consecutive $200\ \mathrm{\mu s}$ measurement intervals.
 The temperature shown in the plot is measured by the on-board MCP9700A sensor.
 Because of the thermal gradient between the PCB and the SiPM, this reading is somewhat lower than the actual SiPM temperature.
 
-As the temperature decreased from $23\ \mathrm{^\circ C}$ to $9\ \mathrm{^\circ C}$, the dark-count rate fell by about $64\%$ at a bias voltage of $27\ \mathrm{V}$, $64\%$ at $28\ \mathrm{V}$, and $61\%$ at $29\ \mathrm{V}$.
-The reduction is substantial across all three bias settings, while the higher-bias measurements consistently show a higher dark-count rate.
+As the temperature decreased from $23\ \mathrm{^\circ C}$ to $9\ \mathrm{^\circ C}$, the dark-count rate fell by about $64\\%$ at a bias voltage of $27\ \mathrm{V}$, $64\\%$ at $28\ \mathrm{V}$, and $61\\%$ at $29\ \mathrm{V}$.
+The reduction is substantial across all three bias settings, with the higher-bias measurements consistently showing a higher dark-count rate.
 
 <div align="center">
   <img src="04_Evaluation/01_Dark_Count/dark_count.png" width="700"><br>
@@ -459,10 +457,10 @@ As an example, the light responses of a generic blue LED and an ams OSRAM PLPT9 
 > A stack of ND8, ND64 and ND1000 neutral-density filters, with a combined attenuation of $512000$, was placed between the source and the detector for these measurements.
 
 In the figures below, the cyan trace is the drive-current pulse and the yellow trace is the SiPM output.
-The scope's pulse-width measurements show a drive-current width of $2.05\ \mathrm{ns}$ and a detector-output width of $5.55\ \mathrm{ns}$ for the blue LED.
-For the PLPT9 laser diode, the corresponding widths are $2.35\ \mathrm{ns}$ and $4.30\ \mathrm{ns}$ for the main optical pulse.
+The scope's pulse-width measurements show a drive-current width of $2.35\ \mathrm{ns}$ and a detector-output width of $5.55\ \mathrm{ns}$ for the blue LED.
+For the PLPT9 laser diode, the corresponding widths are $2.05\ \mathrm{ns}$ and $4.30\ \mathrm{ns}$ for the main optical pulse.
 These measurements show the detector's response to the emitted light, but do not provide an absolute optical power or energy measurement.
-If an additional optical power measurement was available, the measured pulse shape and pulse frequency can be used to estimate the peak optical power.
+If an additional optical power measurement were available, the measured pulse shape and pulse frequency could be used to estimate the peak optical power.
 
 The additional peaks in the laser-diode response coincide with oscillations visible in the drive-current trace.
 These are likely caused by the reverse-protection Zener diode that is integrated into the PLPT9 package.
@@ -490,8 +488,6 @@ Using high-quality RF capacitors instead of the previously tested C0G capacitors
 > Note that the on-board RF amplifier inverts the pulse polarity, resulting in **negative-going pulses** at the PCB's SMA output.
 > An additional external amplifier between the detector board and oscilloscope would invert the signal polarity again.
 > To get positive pulse shapes in the above example, the SiPM output traces were inverted by the scope.
-
-### 4.5 Basic Time-of-Flight Experiments
 
 ## 5. References
 ### 5.1 Datasheets of Main Components
